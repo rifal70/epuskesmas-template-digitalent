@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_backbutton" />
+
+        <TextView
+            android:id="@+id/tv_poliname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_horizontal"
+            android:text="Poli Gigi"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="55dp"
+            android:src="@drawable/rectangle" />
+    </androidx.cardview.widget.CardView>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:id="@+id/dokter"
+    android:layout_below="@+id/cv_header"
+    android:layout_centerInParent="true"
+    >
+
+    <ImageView
+        android:id="@+id/dokter_identity"
+        android:layout_width="379dp"
+        android:layout_height="66dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_rectangle_28" />
+
+    <ImageView
+        android:id="@+id/img_dokter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/dokter_example" />
+
+    <TextView
+        android:id="@+id/nama_dokter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:text="dr. Siapa saya"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="120dp" />
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dokter"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_keteranganDokter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_regular"
+            android:justificationMode="inter_word"
+            android:text="Layanan di puskesmas yang memberikan pelayanan kesehatan gigi dan mulut berupa pemeriksaan kesehatan gigi dan mulut, pengobatan dan pemberian tindakan medis dasar kesehatan gigi dan mulut seperti penambalan gigi, pencabutan gigi dan pembersihan karang gigi."
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/pembatas"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/rectangle" />
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_nomorAntrian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:backgroundTint="@color/primary1"
+        android:text="Ambil Nomor Antrian"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"/>
+
+</RelativeLayout>
+
