@@ -2,39 +2,39 @@ package com.digitalent.epuskesmas.model;
 
 public class PuskesModel {
 
-    private int  iv_Puskes;
-    private String tv_Puskes;
-    private String tv_alamatPuskes;
+    private int puskesImage;
+    private String puskesNama;
+    private String puskesAlamat;
 
 
-    public PuskesModel(int iv_Puskes, String tv_Puskes, String tv_alamatPuskes ){
-        this.iv_Puskes = iv_Puskes;
-        this.tv_Puskes = tv_Puskes;
-        this.tv_alamatPuskes = tv_alamatPuskes;
-
-    }
-    public int getIv_Puskes() {
-        return iv_Puskes;
+    public PuskesModel(int puskesImage, String puskesNama, String puskesAlamat) {
+        this.puskesImage = puskesImage;
+        this.puskesNama = puskesNama;
+        this.puskesAlamat = puskesAlamat;
     }
 
-    public void setIv_Puskes(int iv_Puskes) {
-        this.iv_Puskes = iv_Puskes;
+
+    public int getPuskesImage() {
+        return puskesImage;
     }
 
-    public String getTv_Puskes() {
-        return tv_Puskes;
+    public void setPuskesImage(int puskesImage) {
+        this.puskesImage = puskesImage;
     }
 
-    public void setTv_Puskes(String tv_Puskes) {
-        this.tv_Puskes = tv_Puskes;
+    public String getPuskesNama() {
+        return puskesNama;
     }
 
-    public String getTv_alamatPuskes() {
-        return tv_alamatPuskes;
+    public void setPuskesNama(String puskesNama) {
+        this.puskesNama = puskesNama;
     }
 
-    public void setTv_alamatPuskes(String tv_alamatPuskes) {
-        this.tv_alamatPuskes = tv_alamatPuskes;
+    public String getPuskesAlamat() {
+        return puskesAlamat;
     }
 
+    public void setPuskesAlamat(String puskesAlamat) {
+        this.puskesAlamat = puskesAlamat;
+    }
 }
