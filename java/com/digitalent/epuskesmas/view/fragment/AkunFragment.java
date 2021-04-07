@@ -1,5 +1,6 @@
 package com.digitalent.epuskesmas.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,8 +11,11 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.digitalent.epuskesmas.R;
+import com.digitalent.epuskesmas.view.LoginActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +32,7 @@ public class AkunFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private LinearLayout action_keluar;
 
     public AkunFragment() {
         // Required empty public constructor
@@ -64,9 +69,20 @@ public class AkunFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_akun, container, false);
+        View v = inflater.inflate(R.layout.fragment_akun, container, false);
 
+        action_keluar = v.findViewById(R.id.aksi_btnKeluar);
+        action_keluar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent keluar = new Intent(getActivity(), LoginActivity.class);
+                startActivity(keluar);
+                Toast.makeText(getActivity(),"Anda Telah Keluar",Toast.LENGTH_SHORT).show();
+                getActivity().finish();
+            }
+        });
 
+        return v;
     }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

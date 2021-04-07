@@ -15,7 +15,7 @@ import com.digitalent.epuskesmas.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link PemberitahuanFragment#newInstance} factory method to
+ * Use the {@link BatalFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class BatalFragment extends Fragment {
@@ -42,8 +42,8 @@ public class BatalFragment extends Fragment {
      * @return A new instance of fragment PemberitahuanFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PemberitahuanFragment newInstance(String param1, String param2) {
-        PemberitahuanFragment fragment = new PemberitahuanFragment();
+    public static BatalFragment newInstance(String param1, String param2) {
+        BatalFragment fragment = new BatalFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,6 +63,6 @@ public class BatalFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.action_batalkan_antrian, container, false);
+        return inflater.inflate(R.layout.fragment_batalkan_antrian, container, false);
     }
 }

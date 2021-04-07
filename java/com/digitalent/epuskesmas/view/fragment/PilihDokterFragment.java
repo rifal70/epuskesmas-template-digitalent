@@ -2,65 +2,53 @@ package com.digitalent.epuskesmas.view.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.digitalent.epuskesmas.R;
+import com.digitalent.epuskesmas.model.DokterModel;
+import com.digitalent.epuskesmas.model.DokterRVAdapter;
+import com.digitalent.epuskesmas.model.RecyclerViewAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PilihDokterFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class PilihDokterFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    View v;
+    private RecyclerView recyclerView;
+    private List<DokterModel> dokterModelList;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
-    public PilihDokterFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PilihDokterFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PilihDokterFragment newInstance(String param1, String param2) {
-        PilihDokterFragment fragment = new PilihDokterFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pilih_dokter, container, false);
+
+        v = inflater.inflate(R.layout.fragment_pilih_dokter, container, false);
+        recyclerView = v.findViewById(R.id.list_dokter);
+        DokterRVAdapter dokterRVAdapter = new DokterRVAdapter(getContext(),dokterModelList);
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),4));
+        recyclerView.setAdapter(dokterRVAdapter);
+
+        return v;
+    }
+    @Override
+    public void onCreate (@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        dokterModelList = new ArrayList<>();
+        dokterModelList.add(new DokterModel(R.drawable.dokter_example,"dr. Herbanu"));
+        dokterModelList.add(new DokterModel(R.drawable.dokter_2,"dr. Dea"));
+        dokterModelList.add(new DokterModel(R.drawable.dokter_3,"dr. Dila"));
+        dokterModelList.add(new DokterModel(R.drawable.dokter_4,"dr. Aswinah"));
+        dokterModelList.add(new DokterModel(R.drawable.dokter_5,"dr. Linda"));
+        dokterModelList.add(new DokterModel(R.drawable.dokter_6,"dr. Cahyo"));
     }
 }
