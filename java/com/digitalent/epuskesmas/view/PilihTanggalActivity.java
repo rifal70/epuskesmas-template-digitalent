@@ -1,59 +1,89 @@
 package com.digitalent.epuskesmas.view;
 
+import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.DatePicker;
-import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.digitalent.epuskesmas.R;
-import com.digitalent.epuskesmas.view.fragment.DatePickerFragment;
+import com.digitalent.epuskesmas.view.fragment.PilihDokterFragment;
 
-public class PilihTanggalActivity extends AppCompatActivity {
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class PilihTanggalActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private ImageView img_date;
     private ImageView img_headerPoli;
     private TextView tv_keterangan;
-    private EditText et_pilihTanggal;
+    private TextView tanggalTerpilih;
+    LinearLayout pilihTanggal;
+    ImageView iv_back;
+    TextView tv_poliNama;
+
+    String poliNama;
+    FrameLayout frameLayout;
+
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pilih_tanggal);
 
-        img_date = findViewById(R.id.date_picker);
+        tanggalTerpilih = findViewById(R.id.tv_tanggalTerpilih);
+        tv_poliNama = findViewById(R.id.tv_poliname);
+        img_date = findViewById(R.id.ic_date);
 
+        frameLayout = findViewById(R.id.pilihDokter_fLayout);
+        pilihTanggal = findViewById(R.id.pilihTanggal_Layout);
         img_headerPoli = findViewById(R.id.img_headerPoli);
         tv_keterangan = findViewById(R.id.tv_keteranganPoli);
-        et_pilihTanggal = findViewById(R.id.et_pilihTanggal);
 
-        et_pilihTanggal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePicker();
-            }
+
+
+        iv_back =findViewById(R.id.iv_back);
+        iv_back.setOnClickListener(v -> {
+            Intent back = new Intent(this,DescriptionPuskesmas.class);
+            startActivity(back);
+            finish();
         });
 
+        pilihTanggal.setOnClickListener(v -> {
+            showDatePickerDialog();
+        });
+
+        poliNama = getIntent().getStringExtra("poliNama");
+        tv_poliNama.setText(poliNama);
 
     }
 
-    private void DatePicker() {
-        DatePickerFragment datePickerFragment = new DatePickerFragment();
-        datePickerFragment.show(getSupportFragmentManager(), "data");
-        datePickerFragment.setOnDateClickListener(new DatePickerFragment.onDateClickListener() {
+    private void showDatePickerDialog() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
 
-            @Override
-            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        String date = dayOfMonth + "/" + month + "/" + year;
+        tanggalTerpilih.setText(date);
 
-                String tahun = "" + datePicker.getYear();
-                String bulan = "" + (datePicker.getMonth()+1);
-                String hari = ""+datePicker.getDayOfMonth();
-                String text = hari+" / "+bulan+" / "+tahun;
-                et_pilihTanggal.setText(text);
-            }
-
-        });
+        getSupportFragmentManager().beginTransaction().replace(R.id.pilihDokter_fLayout,
+                new PilihDokterFragment()).commit();
     }
 }

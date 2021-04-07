@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -14,7 +15,6 @@ import com.digitalent.epuskesmas.R;
 import com.digitalent.epuskesmas.view.fragment.AkunFragment;
 import com.digitalent.epuskesmas.view.fragment.AntrianFragment;
 import com.digitalent.epuskesmas.view.fragment.BerandaFragment;
-import com.digitalent.epuskesmas.view.fragment.PemberitahuanFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -32,12 +32,14 @@ public class HomeActivity extends AppCompatActivity {
         menu_bawah = findViewById(R.id.menu_bawah);
         menu_bawah.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new BerandaFragment()) .commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout,
+                new BerandaFragment()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new
             BottomNavigationView.OnNavigationItemSelectedListener() {
 
+                @SuppressLint("NonConstantResourceId")
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment fragment = null;
@@ -45,14 +47,6 @@ public class HomeActivity extends AppCompatActivity {
                     switch (item.getItemId()) {
                         case R.id.beranda:
                             fragment = new BerandaFragment();
-                            fragmentManager = getSupportFragmentManager();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frameLayout, fragment);
-                            fragmentTransaction.commit();
-                            break;
-
-                        case R.id.pemberitahuan:
-                            fragment = new PemberitahuanFragment();
                             fragmentManager = getSupportFragmentManager();
                             fragmentTransaction = fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.frameLayout, fragment);
@@ -78,11 +72,6 @@ public class HomeActivity extends AppCompatActivity {
                     return true;
                 }
             };
-
-
-    private void namafunction(Fragment namafragment) {
-
-    }
 
 
 }
