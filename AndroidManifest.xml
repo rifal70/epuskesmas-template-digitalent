@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.digitalent.epuskesmas">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_splashscreen"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_splashscreen"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EPuskesmas">
+        <activity android:name=".view.PinVerifikasiActivity" />
+        <activity android:name=".view.VerifikasiActivity" />
+        <activity android:name=".view.LupaSandiActivity" />
+        <activity android:name=".view.RegistrasiActivity" />
+        <activity android:name=".view.LoginActivity" />
+        <activity android:name=".view.PilihTanggalActivity" />
+        <activity android:name=".view.DescriptionPuskesmas"/>
+        <activity android:name=".view.AmbilNomorAntrian"/>
+        <activity android:name=".view.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.HomeActivity" />
+    </application>
+
+</manifest>
