@@ -34,43 +34,44 @@
             android:layout_marginTop="55dp"
             android:src="@drawable/rectangle" />
     </androidx.cardview.widget.CardView>
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="76dp"
-    android:id="@+id/dokter"
-    android:layout_below="@+id/cv_header"
-    android:layout_centerInParent="true"
-    >
 
-    <ImageView
-        android:id="@+id/dokter_identity"
-        android:layout_width="379dp"
-        android:layout_height="66dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/ic_rectangle_28" />
+    <RelativeLayout
+        android:id="@+id/dokter"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_below="@+id/cv_header"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="25dp">
 
-    <ImageView
-        android:id="@+id/img_dokter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="0dp"
-        android:background="@drawable/dokter_example" />
+        <ImageView
+            android:id="@+id/dokter_identity"
+            android:layout_width="379dp"
+            android:layout_height="66dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_rectangle_28" />
 
-    <TextView
-        android:id="@+id/nama_dokter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_regular"
-        android:text="dr. Siapa saya"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginStart="120dp" />
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/iv_dokterFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/dokter_example" />
+
+        <TextView
+            android:id="@+id/tv_dokterNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="dr. Siapa saya"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -100,19 +101,20 @@
 
 
     </LinearLayout>
+
     <Button
         android:id="@+id/btn_nomorAntrian"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="25dp"
-        android:backgroundTint="@color/primary1"
-        android:text="Ambil Nomor Antrian"
         android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/primary1"
         android:fontFamily="@font/roboto_regular"
-        android:textColor="@color/white"
+        android:text="Ambil Nomor Antrian"
         android:textAllCaps="false"
-        android:textStyle="bold"
-        android:layout_marginBottom="40dp"/>
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 </RelativeLayout>
 

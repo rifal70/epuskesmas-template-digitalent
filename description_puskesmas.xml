@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_backbutton" />
+
+        <TextView
+            android:id="@+id/tv_puskesAtas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_horizontal"
+            android:text="Puskesmas"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="55dp"
+            android:src="@drawable/rectangle" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_marginTop="2dp"
+        android:id="@+id/img_headerPuskes"
+        android:layout_width="match_parent"
+        android:layout_height="194dp"
+        android:layout_below="@+id/cv_header"
+        />
+
+    <LinearLayout
+        android:id="@+id/alamat_puskes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_headerPuskes"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ic_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_pin_drop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_puskesNamaBawah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Puskesmas Manasaja"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jln Sukahati no 30 blok Z"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:id="@+id/tv_puskesAlamat"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/phone_puskes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/alamat_puskes"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ic_phone"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_phone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="021 - 742323"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:id="@+id/tv_puskesNomor"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/pembatas"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/phone_puskes"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/rectangle" />
+
+    <TextView
+        android:id="@+id/tv_pilihPoliklinik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pembatas"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Pilih Poliklinik"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_poliklinik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_pilihPoliklinik"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" />
+
+
+</RelativeLayout>

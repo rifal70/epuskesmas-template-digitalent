@@ -15,13 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="56dp">
 
-            <ImageView
-                android:id="@+id/iv_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/ic_backbutton" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -47,7 +40,7 @@
             android:layout_height="101dp"
             android:layout_below="@id/cv_headerAntrian"
             android:layout_centerInParent="true"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="50dp"
             android:src="@drawable/rectangle_green" />
 
         <LinearLayout
@@ -56,7 +49,7 @@
             android:layout_height="101dp"
             android:layout_below="@id/cv_headerAntrian"
             android:layout_centerInParent="true"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="50dp"
             android:orientation="vertical">
 
             <TextView
@@ -68,7 +61,8 @@
                 android:text="No. Antrian Saat Ini"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                />
 
             <TextView
                 android:layout_width="match_parent"
@@ -89,7 +83,7 @@
             android:layout_height="180dp"
             android:layout_below="@+id/ll_nomorAntrian"
             android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/rectangle_stroke"
             android:orientation="horizontal">
 
@@ -133,44 +127,16 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_nomorAntrianAndafull2"
-            android:layout_width="308dp"
-            android:layout_height="101dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@+id/ll_nomorAntrianAndafull"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rectangle_stroke"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:gravity="center_horizontal"
-                android:text="Estimasi Waktu Tunggu"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="22 Jam 54 Menit 20 Detik"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
+            android:gravity="bottom"
+            android:layout_marginBottom="90dp">
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_batal"
-            android:layout_width="328dp"
-            android:layout_centerInParent="true"
-            android:layout_height="45dp"
-            android:layout_below="@+id/ll_nomorAntrianAndafull2"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="32dp"
+            android:id="@+id/btn_batalAntrian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="55dp"
             android:text="Batalkan Antrian"
             android:textAllCaps="false"
             android:textColor="@color/primary2"
@@ -180,5 +146,6 @@
             android:backgroundTint="@color/white"
             app:strokeColor="@color/primary2"
             app:strokeWidth="2dp" />
+        </LinearLayout>
     </RelativeLayout>
 </FrameLayout>

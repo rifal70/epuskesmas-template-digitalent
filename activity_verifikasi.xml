@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/linear_1"
@@ -41,93 +40,76 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/relative_1"
-        android:orientation="vertical"
         android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/noHPLayout"
+        <TextView
+            android:id="@+id/tv_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_noHP"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:maxLines="1"
             android:fontFamily="@font/roboto_regular"
-            android:hint="Nomor Handphone"
-            android:inputType="number"
-            android:textSize="16sp"
-            android:background="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:gravity="center_horizontal"
+            android:text="Password Baru"
+            android:textAlignment="center"
+            android:textColor="@color/primary1"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_passwordLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/gray3"
-            >
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_password"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/white"
-                android:fontFamily="@font/roboto_regular"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:hint="Password"
-                android:textColor="@color/gray2"
-                android:textSize="16sp" />
+            android:id="@+id/passwordbaru_ly">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_passwordbaru"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="Password Baru"
+            android:background="@color/white"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tv_lupapassword"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Lupa Kata Sandi?"
-            android:textAlignment="textEnd"
-            android:textColor="@color/primary1"
-            android:textStyle="bold" />
+            app:passwordToggleEnabled="true"
+            android:id="@+id/passwordbaru_ly2">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_ulangipassword"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="Ulangi Password"
+                android:background="@color/white"
+                android:inputType="textPassword"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linear_2"
-        android:layout_marginTop="75dp">
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="50dp">
 
         <Button
-            android:id="@+id/btn_masuk"
+            android:letterSpacing="0"
+            android:id="@+id/btn_ubahPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_marginHorizontal="25dp"
             android:backgroundTint="@color/primary2"
-            android:text="Masuk"
-            android:textColor="@color/white"
+            android:text="Ubah Password"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_daftar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_masuk"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="25dp"
-            android:text="Daftar"
-            android:textAllCaps="false"
-            android:textColor="@color/primary2"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:backgroundTint="@color/white"
-            app:strokeColor="@color/primary2"
-            app:strokeWidth="2dp" />
     </RelativeLayout>
 </RelativeLayout>

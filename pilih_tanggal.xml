@@ -83,29 +83,38 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="32dp"
+        android:id="@+id/pilihTanggal_Layout"
         android:layout_below="@id/tv_pilihTanggal"
         android:orientation="horizontal"
         >
 
-        <EditText
-            android:id="@+id/et_pilihTanggal"
+        <TextView
+            android:id="@+id/tv_tanggalTerpilih"
             android:layout_width="310dp"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
+            android:textColor="@color/black"
             android:hint="Pilih Tanggal"
             android:textSize="14sp"
-            android:inputType="date"/>
+            />
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:src="@drawable/ic_date"
-            android:layout_marginLeft="8dp"
-            android:id="@+id/date_picker"
-            android:onClick="datePicker"/>
+            android:visibility="visible"
+            android:layout_marginLeft="2dp"
+            android:id="@+id/ic_date"/>
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_below="@id/pilihTanggal_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pilihDokter_fLayout"
+        android:layout_marginTop="35dp"
+        >
+
+
+
+    </FrameLayout>
 </RelativeLayout>
 

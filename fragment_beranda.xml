@@ -60,7 +60,7 @@
             android:text="Puskesmas Terdekat"
             android:id="@+id/tv_puskesterdekat"
             android:layout_below="@id/upper"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto_regular"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -69,29 +69,24 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_puskesterdekat">
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nested_scroll_view"
-            android:background="@color/grey_3"
-            android:scrollbars="none"
-            android:scrollingCache="true"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:layout_marginTop="10dp"
-            android:layout_marginHorizontal="32dp">
-
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_puskesterdekat"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/white"
+            android:layout_marginTop="20dp"
+            android:id="@+id/rec">
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+                android:id="@+id/recyclerView_puskes"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:fillViewport = "true"
                 android:scrollbars="vertical"
                 android:scrollingCache= "true"
                 android:orientation="horizontal"
+                android:visibility="visible"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="70dp"
                 />
-        </androidx.core.widget.NestedScrollView>
         </LinearLayout>
     </RelativeLayout>
 
